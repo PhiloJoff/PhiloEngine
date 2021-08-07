@@ -20,6 +20,7 @@ namespace PhiloEngine
         public MainGame()
         {
             _graphics = new GraphicsDeviceManager(this);
+            _gameState = new GameState();
             Content.RootDirectory = "Content";
         }
         public MainGame(int width, int height)
@@ -40,7 +41,6 @@ namespace PhiloEngine
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            _gameState = new GameState();
 
         }
 

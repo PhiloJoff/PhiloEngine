@@ -6,19 +6,9 @@ namespace PhiloEngine.src
 {
     public class GameState
     {
-        public enum SceneType
-        {
-            MainMenu,
-            GameOver,
-            Gameplay,
-            Pause,
-            Win,
-            GameEditor,
-            GameplayLoaded
-        }
 
         private Scene _currentScene;
-        public Scene CurrentScene { get; protected set; }
+        public Scene CurrentScene { get => _currentScene; protected set { } }
 
         public GameState()
         {

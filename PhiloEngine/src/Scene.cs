@@ -8,9 +8,23 @@ namespace PhiloEngine.src
 {
     abstract public class Scene
     {
+        public enum SceneType
+        {
+            Base,
+            MainMenu,
+            GameOver,
+            Gameplay,
+            Pause,
+            Win,
+            GameEditor,
+            Options,
+            GameplayLoaded
+        }
+
         protected MainGame _mainGame;
         protected EntityManager _entityManager;
         protected SpriteBatch _spriteBatch;
+        protected SceneType _sceneType;
 
         public Scene(MainGame mainGame)
         {
@@ -19,6 +33,7 @@ namespace PhiloEngine.src
                 throw new ArgumentNullException(nameof(mainGame));
             }
             _mainGame = mainGame;
+            _entityManager = new EntityManager(_spriteBatch);
             Load();
         }
 

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +11,13 @@ namespace PhiloEngine.src
     {
         protected List<IGameEntity> _gameEntities;
         public List<IGameEntity> GameEntities { get => _gameEntities; }
+        protected SpriteBatch _spriteBatch;
+        public SpriteBatch SpriteBatch { get => _spriteBatch; }
 
-        public EntityManager()
+        public EntityManager(SpriteBatch spriteBatch)
         {
             _gameEntities = new List<IGameEntity>();
+            _spriteBatch = spriteBatch;
         }
         
         public bool AddEntity(IGameEntity gameEntity)
@@ -66,7 +70,7 @@ namespace PhiloEngine.src
         {
             foreach (IGameEntity entity in _gameEntities.OrderBy(e => e.DrawOrder))
             {
-                entity.Draw(gameTime);
+                _spriteBatch.Draw(entity.Texture, entity.Pos, null, entity.Color, entity.Rotation, entity.Origin, entity.Scale, entity.SpriteEffects, entity.LayerDepth);
             }
         }
 
