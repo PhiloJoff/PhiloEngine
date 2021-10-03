@@ -5,8 +5,10 @@ namespace PhiloEngine.src
 {
     public interface IGameEntity
     {
-        Texture2D Texture { get; set; }
+        Texture2D Texture2D { get; set; }
         Vector2 Pos { get; set; }
+        int Width { get; set; }
+        int Height { get; set; }
         Color Color { get; set; }
         float Rotation { get; set; }
         Vector2 Origin { get; set; }

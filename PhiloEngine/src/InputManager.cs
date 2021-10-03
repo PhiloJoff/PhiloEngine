@@ -1,11 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace PhiloEngine.src
 {
-    class InputManager
+    public class InputManager
     {
         private KeyboardState _currentKeyState, _prevKeyState;
         public KeyboardState CurrentKeyState { get => _currentKeyState; }
@@ -24,7 +25,6 @@ namespace PhiloEngine.src
         public void Update()
         {
             _prevKeyState = _currentKeyState;
-
             _currentKeyState = Keyboard.GetState();
         }
         public bool KeyPressed(params Keys[] keys)

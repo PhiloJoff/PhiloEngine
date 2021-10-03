@@ -33,13 +33,13 @@ namespace PhiloEngine.src
                 throw new ArgumentNullException(nameof(mainGame));
             }
             _mainGame = mainGame;
-            _entityManager = new EntityManager(_spriteBatch);
             Load();
         }
 
         public virtual void Load()
         {
             _spriteBatch = _mainGame.SpriteBatch;
+            _entityManager = new EntityManager(_spriteBatch);
         }
 
         public virtual void Unload()

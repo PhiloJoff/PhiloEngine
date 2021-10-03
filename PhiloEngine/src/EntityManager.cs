@@ -70,7 +70,7 @@ namespace PhiloEngine.src
         {
             foreach (IGameEntity entity in _gameEntities.OrderBy(e => e.DrawOrder))
             {
-                _spriteBatch.Draw(entity.Texture, entity.Pos, null, entity.Color, entity.Rotation, entity.Origin, entity.Scale, entity.SpriteEffects, entity.LayerDepth);
+                _spriteBatch.Draw(entity.Texture2D, entity.Pos, null, entity.Color, entity.Rotation, entity.Origin, entity.Scale, entity.SpriteEffects, entity.LayerDepth);
             }
         }
 
