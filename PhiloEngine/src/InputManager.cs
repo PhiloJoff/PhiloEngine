@@ -27,7 +27,8 @@ namespace PhiloEngine.src
             _prevKeyState = _currentKeyState;
             _currentKeyState = Keyboard.GetState();
         }
-        public bool KeyPressed(params Keys[] keys)
+        //Touche juste tapé
+        public bool KeyTyped(params Keys[] keys)
         {
             foreach (Keys key in keys)
             {
@@ -36,7 +37,7 @@ namespace PhiloEngine.src
             }
             return false;
         }
-
+        // Touche relaché
         public bool KeyReleased(params Keys[] keys)
         {
             foreach (Keys key in keys)
@@ -47,6 +48,7 @@ namespace PhiloEngine.src
             return false;
         }
 
+        // Touche enfoncé
         public bool KeyDown(params Keys[] keys)
         {
             foreach (Keys key in keys)

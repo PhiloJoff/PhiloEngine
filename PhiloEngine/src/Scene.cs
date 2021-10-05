@@ -24,6 +24,7 @@ namespace PhiloEngine.src
         protected MainGame _mainGame;
         protected EntityManager _entityManager;
         protected SpriteBatch _spriteBatch;
+        protected InputManager _inputManager;
         protected SceneType _sceneType;
 
         public Scene(MainGame mainGame)
@@ -34,8 +35,8 @@ namespace PhiloEngine.src
             }
             _mainGame = mainGame;
             _spriteBatch = _mainGame.SpriteBatch;
+            _inputManager = _mainGame.InputManager;
             _entityManager = new EntityManager(_spriteBatch);
-            Load();
         }
 
         public virtual void Load()
