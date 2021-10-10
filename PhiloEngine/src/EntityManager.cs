@@ -74,5 +74,10 @@ namespace PhiloEngine.src
             }
         }
 
+        public int Count()
+        {
+            return _gameEntities.Count;
+        }
+
     }
 }
