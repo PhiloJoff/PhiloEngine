@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PhiloEngine.src
 {
-    abstract public class Scene
+    public abstract class Scene
     {
         public enum SceneType
         {
