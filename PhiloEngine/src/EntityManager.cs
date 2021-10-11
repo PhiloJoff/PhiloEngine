@@ -41,7 +41,7 @@ namespace PhiloEngine.src
                 throw new ArgumentNullException(nameof(gameEntity));
             }
 
-            if (HasEntity(gameEntity))
+            if (!HasEntity(gameEntity))
                 return false;
 
             _gameEntities.Remove(gameEntity); 
