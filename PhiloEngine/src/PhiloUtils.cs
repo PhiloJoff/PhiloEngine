@@ -12,12 +12,12 @@ namespace PhiloEngine.src
     public static class PhiloUtils
     {
         /// <summary>
-        /// Create a Texture2D with a Color.White by default
+        /// Return a Texture2D
         /// </summary>
-        /// <param name="graphics"></param>
-        /// <param name="width"></param>
-        /// <param name="height"></param>
-        /// <param name="color"></param>
+        /// <param name="graphics">GraphicsDevice</param>
+        /// <param name="width">Width of the Texture2D</param>
+        /// <param name="height">Height of the Texture2D</param>
+        /// <param name="color">Color of the Texture2D</param>
         /// <returns></returns>
         public static Texture2D CreateTexture2D(GraphicsDevice graphics, int width, int height, Color? color = null)
         {
