@@ -72,7 +72,7 @@ namespace PhiloEngine.src
         /// <typeparam name="T">Type of value in the list</typeparam>
         /// <param name="a">Collection<T> 1</param>
         /// <param name="b">Collection<T> 2</param>
-        /// <returns></returns>
+        /// <returns>True if equal</returns>
         public static bool UnorderedEqual<T>(ICollection<T> a, ICollection<T> b)
         {
             // Require that the counts are equal
