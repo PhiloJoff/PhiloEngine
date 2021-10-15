@@ -128,5 +128,19 @@ namespace PhiloEngine.src
             // We know the collections are equal
             return true;
         }
+
+        public static Color GetColorByName(string name)
+        {
+            foreach (var prop in typeof(Color).GetProperties())
+            {
+                if (name == prop.Name)
+                {
+
+                    return (Color)prop.GetValue(typeof(Color));
+                }
+            }
+
+            return Color.Transparent;
+        }
     }
 }
