@@ -148,7 +148,16 @@ namespace PhiloEngine.src
             return Color.Transparent;
         }
 
-
+        /// <summary>
+        /// Return a Texture2D with border
+        /// </summary>
+        /// <param name="graphics">Graphics Device</param>
+        /// <param name="width">Width of the texture</param>
+        /// <param name="height">Height of the texture</param>
+        /// <param name="textureColor">Main color fo the texture</param>
+        /// <param name="colorBorder">Color of the border</param>
+        /// <param name="thickness">Thickness of the border</param>
+        /// <returns></returns>
         public static Texture2D CreateBorderTexture2D(GraphicsDevice graphics, int width, int height, Color textureColor, Color colorBorder, int thickness)
         {
 
