@@ -129,6 +129,11 @@ namespace PhiloEngine.src
             return true;
         }
 
+        /// <summary>
+        /// Return color by name
+        /// </summary>
+        /// <param name="name">Name of the color</param>
+        /// <returns>Return the color if found else return Transparent</returns>
         public static Color GetColorByName(string name)
         {
             foreach (var prop in typeof(Color).GetProperties())
@@ -141,6 +146,37 @@ namespace PhiloEngine.src
             }
 
             return Color.Transparent;
+        }
+
+
+        public static Texture2D CreateBorderTexture2D(GraphicsDevice graphics, int width, int height, Color textureColor, Color colorBorder, int thickness)
+        {
+
+            Texture2D texture = new Texture2D(graphics, width, height);
+            Color[] data = new Color[width * height];
+
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    bool colored = false;
+                    for (int i = 0; i < thickness; i++)
+                    {
+                        if (x == i || y == i || x == width - 1 - i || y == height - 1 - i)
+                        {
+                            data[x + y * width] = colorBorder;
+                            colored = true;
+                            break;
+                        
+                        }
+                    }
+                    if (!colored)
+                        data[x + y * width] = textureColor;
+                }
+            }
+            texture.SetData(data);
+            return texture;
+
         }
     }
 }
