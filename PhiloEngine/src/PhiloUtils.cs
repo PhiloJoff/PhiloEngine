@@ -187,5 +187,11 @@ namespace PhiloEngine.src
             return texture;
 
         }
+
+        public static double RandomDouble(double min, double max)
+        {
+            Random random = new Random(DateTime.Now.Millisecond);
+            return random.NextDouble() * (max - min) + min;
+        }
     }
 }
