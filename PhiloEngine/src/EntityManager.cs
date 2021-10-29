@@ -33,6 +33,28 @@ namespace PhiloEngine.src
             _gameEntities.Add(gameEntity);
             return true;
         }
+        public bool AddEntities(List<IGameEntity> gameEntities)
+        {
+            bool hasEntity = false;
+
+            if (gameEntities is null)
+            {
+                throw new ArgumentNullException(nameof(gameEntities));
+            }
+
+            foreach (IGameEntity entity in gameEntities)
+            {
+                if (HasEntity(entity))
+                {
+                    hasEntity = false;
+                    break;
+
+                }
+                _gameEntities.Add(entity);
+
+            }
+            return hasEntity;
+        }
 
         public bool RemoveEntity(IGameEntity gameEntity)
         {
